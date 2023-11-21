@@ -64,7 +64,7 @@ class Day09 extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            const ScheduleCard()
+            const ScheduleCard(),
           ],
         ),
       ),
@@ -100,9 +100,10 @@ class ScheduleCard extends StatelessWidget {
                   ),
                   Text('30'),
                   Expanded(
-                      child: VerticalDivider(
-                    color: Colors.black,
-                  )),
+                    child: VerticalDivider(
+                      color: Colors.black,
+                    ),
+                  ),
                   Text(
                     '12',
                     style: TextStyle(fontSize: 24),
@@ -127,14 +128,16 @@ class ScheduleCard extends StatelessWidget {
             const Positioned(
               left: 50,
               bottom: 0,
-              child: Row(children: [
-                Text('ALEX'),
-                SizedBox(width: 20),
-                Text('HELENA'),
-                SizedBox(width: 20),
-                Text('NANA'),
-              ]),
-            )
+              child: Row(
+                children: [
+                  Text('ALEX'),
+                  SizedBox(width: 20),
+                  Text('HELENA'),
+                  SizedBox(width: 20),
+                  Text('NANA'),
+                ],
+              ),
+            ),
           ],
         ),
       ),
