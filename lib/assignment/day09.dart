@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-const bgColor = Colors.amber;
-final List<int> days = List.generate(20, (index) => 17 + index);
-
 class Day09 extends StatelessWidget {
   const Day09({super.key});
+  static const bgColor = Colors.amber;
+  static List<int> days = List.generate(20, (index) => 17 + index);
 
   @override
   Widget build(BuildContext context) {
