@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nomad_study_v2/assignment/day09.dart';
-import 'package:flutter_nomad_study_v2/assignment/day11.dart';
+import 'package:flutter_nomad_study_v2/assignment/movie/movie_home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Day11(),
+      home: const MovieHomeScreen(),
     );
   }
 }

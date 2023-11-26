@@ -2,14 +2,14 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-class Day11 extends StatefulWidget {
-  const Day11({super.key});
+class Pomodoro extends StatefulWidget {
+  const Pomodoro({super.key});
 
   @override
-  State<Day11> createState() => _Day11State();
+  State<Pomodoro> createState() => _PomodoroState();
 }
 
-class _Day11State extends State<Day11> {
+class _PomodoroState extends State<Pomodoro> {
   static const bgColor = Colors.orange;
   static const timer = [15, 20, 25, 30, 35];
 
