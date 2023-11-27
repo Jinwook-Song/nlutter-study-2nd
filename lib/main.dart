@@ -1,9 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nomad_study_v2/assignment/movie/movie_home_screen.dart';
+import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_home_screen.dart';
+import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_policy_screen.dart';
+import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_sign_up_screen.dart';
+import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+const primaryColor = Color(0xFF1DA1F2);
+const grey300 = Color(0xFFE0E0E0);
+const grey400 = Color(0xFFBDBDBD);
+const grey500 = Color(0xFF9E9E9E);
+const titleStyle = TextStyle(
+  fontSize: Sizes.size24,
+  fontWeight: FontWeight.w800,
+);
+const subTitleStyle = TextStyle(
+  fontSize: Sizes.size20,
+  fontWeight: FontWeight.w600,
+);
+const labelStyle = TextStyle(
+  fontSize: Sizes.size16,
+  fontWeight: FontWeight.w600,
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,25 +35,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
+        primaryColor: primaryColor,
         useMaterial3: true,
       ),
-      home: const MovieHomeScreen(),
+      home: const TwitterHomeScreen(),
     );
   }
 }
