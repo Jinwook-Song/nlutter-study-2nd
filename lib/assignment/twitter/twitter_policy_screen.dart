@@ -1,11 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_confirm_sign_up_screen.dart';
 import 'package:flutter_nomad_study_v2/assignment/twitter/widgets/wide_button.dart';
 import 'package:flutter_nomad_study_v2/contants/gaps.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 import 'package:flutter_nomad_study_v2/main.dart';
 
 class TwitterPolicyScreen extends StatelessWidget {
-  const TwitterPolicyScreen({super.key});
+  final String name, email, birth;
+
+  const TwitterPolicyScreen({
+    super.key,
+    required this.name,
+    required this.email,
+    required this.birth,
+  });
+
+  void _onNextTap(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => TwitterConfirmSignUpScreen(
+          name: name,
+          email: email,
+          birth: birth,
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +76,12 @@ class TwitterPolicyScreen extends StatelessWidget {
                 'By signing up, you agree to our Terms, Privacy Policy, and Cookie Use. Twitter may use your contact information, including your email address and phone number for purposes outlined in our Privacy Policy. Learn more',
               ),
               const Spacer(),
-              const WideButton(
-                text: 'Next',
-                isDark: true,
+              GestureDetector(
+                onTap: () => _onNextTap(context),
+                child: const WideButton(
+                  text: 'Next',
+                  isDark: true,
+                ),
               ),
             ],
           ),

@@ -7,12 +7,14 @@ class WideButton extends StatelessWidget {
   final String? imagePath;
   final String text;
   final bool isDark;
+  final bool isBlue;
 
   const WideButton({
     super.key,
     this.imagePath,
     required this.text,
     this.isDark = false,
+    this.isBlue = false,
   });
 
   @override
@@ -21,8 +23,18 @@ class WideButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: Sizes.size8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(Sizes.size32),
-        border: Border.all(color: isDark ? Colors.black : grey300),
-        color: isDark ? Colors.black : null,
+        border: Border.all(
+          color: isBlue
+              ? primaryColor
+              : isDark
+                  ? Colors.black
+                  : grey300,
+        ),
+        color: isBlue
+            ? primaryColor
+            : isDark
+                ? Colors.black
+                : null,
       ),
       child: SizedBox(
         height: Sizes.size32,
@@ -42,7 +54,7 @@ class WideButton extends StatelessWidget {
               style: TextStyle(
                 fontSize: Sizes.size16,
                 fontWeight: FontWeight.w600,
-                color: isDark ? Colors.white : null,
+                color: (isDark || isBlue) ? Colors.white : null,
               ),
             ),
           ],

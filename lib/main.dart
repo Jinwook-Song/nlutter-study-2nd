@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nomad_study_v2/assignment/movie/movie_home_screen.dart';
 import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_home_screen.dart';
-import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_policy_screen.dart';
-import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_sign_up_screen.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 
 void main() {
@@ -13,6 +10,8 @@ const primaryColor = Color(0xFF1DA1F2);
 const grey300 = Color(0xFFE0E0E0);
 const grey400 = Color(0xFFBDBDBD);
 const grey500 = Color(0xFF9E9E9E);
+const grey600 = Color(0xFF757575);
+const grey700 = Color(0xFF616161);
 const titleStyle = TextStyle(
   fontSize: Sizes.size24,
   fontWeight: FontWeight.w800,
@@ -29,7 +28,6 @@ const labelStyle = TextStyle(
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,6 +36,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
         primaryColor: primaryColor,
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          surfaceTintColor: Colors.white,
+        ),
       ),
       home: const TwitterHomeScreen(),
     );
