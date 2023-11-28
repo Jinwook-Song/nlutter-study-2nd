@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_sign_up_screen.dart';
 import 'package:flutter_nomad_study_v2/assignment/twitter/widgets/wide_button.dart';
-import 'package:flutter_nomad_study_v2/contants/gaps.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 import 'package:flutter_nomad_study_v2/main.dart';
 
@@ -39,13 +38,13 @@ class TwitterHomeScreen extends StatelessWidget {
             ),
             const Spacer(),
             const WideButton(
+              'Continue with Apple',
               imagePath: 'assets/images/apple_logo.png',
-              text: 'Continue with Apple',
             ),
             Gaps.v16,
             const WideButton(
+              'Continue with Google',
               imagePath: 'assets/images/google_logo.png',
-              text: 'Continue with Google',
             ),
             Gaps.v20,
             const Row(
@@ -61,7 +60,7 @@ class TwitterHomeScreen extends StatelessWidget {
             GestureDetector(
               onTap: () => _onCreateAccountTap(context),
               child: const WideButton(
-                text: 'Create account',
+                'Create account',
                 isDark: true,
               ),
             ),

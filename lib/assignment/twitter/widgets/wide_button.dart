@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nomad_study_v2/contants/gaps.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 import 'package:flutter_nomad_study_v2/main.dart';
 
@@ -9,10 +8,10 @@ class WideButton extends StatelessWidget {
   final bool isDark;
   final bool isBlue;
 
-  const WideButton({
+  const WideButton(
+    this.text, {
     super.key,
     this.imagePath,
-    required this.text,
     this.isDark = false,
     this.isBlue = false,
   });

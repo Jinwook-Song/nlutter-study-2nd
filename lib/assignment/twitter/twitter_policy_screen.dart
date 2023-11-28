@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_confirm_sign_up_screen.dart';
 import 'package:flutter_nomad_study_v2/assignment/twitter/widgets/wide_button.dart';
-import 'package:flutter_nomad_study_v2/contants/gaps.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 import 'package:flutter_nomad_study_v2/main.dart';
 
@@ -79,7 +78,7 @@ class TwitterPolicyScreen extends StatelessWidget {
               GestureDetector(
                 onTap: () => _onNextTap(context),
                 child: const WideButton(
-                  text: 'Next',
+                  'Next',
                   isDark: true,
                 ),
               ),

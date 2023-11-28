@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_nomad_study_v2/assignment/twitter/widgets/wide_button.dart';
-import 'package:flutter_nomad_study_v2/contants/gaps.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 import 'package:flutter_nomad_study_v2/main.dart';
 
@@ -158,7 +156,7 @@ class _TwitterConfirmSignUpScreenState
                   ),
                   Gaps.v16,
                   const WideButton(
-                    text: 'Sign up',
+                    'Sign up',
                     isBlue: true,
                   ),
                 ],

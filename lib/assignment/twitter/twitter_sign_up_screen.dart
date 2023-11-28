@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_policy_screen.dart';
-import 'package:flutter_nomad_study_v2/contants/gaps.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 import 'package:flutter_nomad_study_v2/main.dart';
 
@@ -29,11 +28,6 @@ class _TwitterSignUpScreenState extends State<TwitterSignUpScreen> {
       });
     });
     _emailController.addListener(() {
-      setState(() {
-        _isValid = _checkValid();
-      });
-    });
-    _birthContorller.addListener(() {
       setState(() {
         _isValid = _checkValid();
       });
@@ -74,7 +68,9 @@ class _TwitterSignUpScreenState extends State<TwitterSignUpScreen> {
   void _onDateTimeChanged(DateTime date) {
     final dateToString = date.toString().split(' ')[0];
     _birthContorller.value = TextEditingValue(text: dateToString);
-    setState(() {});
+    setState(() {
+      _isValid = _checkValid();
+    });
   }
 
   @override
@@ -174,14 +170,28 @@ class _TwitterSignUpScreenState extends State<TwitterSignUpScreen> {
                     controller: _birthContorller,
                     focusNode: _birthFocus,
                     style: const TextStyle(color: primaryColor),
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Date of birth',
-                      enabledBorder: UnderlineInputBorder(
+                      enabledBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(color: grey500),
                       ),
-                      focusedBorder: UnderlineInputBorder(
+                      focusedBorder: const UnderlineInputBorder(
                         borderSide: BorderSide(color: primaryColor),
                       ),
+                      suffix: _birthContorller.text.length > 5
+                          ? Container(
+                              padding: const EdgeInsets.all(Sizes.size3),
+                              decoration: const BoxDecoration(
+                                color: Colors.green,
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.check,
+                                size: Sizes.size16,
+                                color: Colors.white,
+                              ),
+                            )
+                          : null,
                     ),
                   ),
                   Gaps.v20,
