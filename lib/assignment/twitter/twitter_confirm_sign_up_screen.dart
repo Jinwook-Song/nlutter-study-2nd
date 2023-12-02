@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_confirm_code_screen.dart';
 import 'package:flutter_nomad_study_v2/assignment/twitter/widgets/wide_button.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 import 'package:flutter_nomad_study_v2/main.dart';
@@ -32,6 +33,14 @@ class _TwitterConfirmSignUpScreenState
     _emailController.dispose();
     _birthContorller.dispose();
     super.dispose();
+  }
+
+  void _onNextTap(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const TwitterConfirmCodeScreen(),
+      ),
+    );
   }
 
   @override
@@ -155,9 +164,12 @@ class _TwitterConfirmSignUpScreenState
                     'By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use. Twitter may use your contact information, including your email address and phone number for purposes outlined in our Privacy Policy, like keeping your account secure and personalizing our services, including ads. Learn more. Others will be able to find you by email or phone number, when provided, unless you choose otherwise here.',
                   ),
                   Gaps.v16,
-                  const WideButton(
-                    'Sign up',
-                    isBlue: true,
+                  GestureDetector(
+                    onTap: () => _onNextTap(context),
+                    child: const WideButton(
+                      'Sign up',
+                      isBlue: true,
+                    ),
                   ),
                 ],
               ),
