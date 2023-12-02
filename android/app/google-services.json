@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "485004072009",
+    "project_id": "flutter-nomad-study-v2",
+    "storage_bucket": "flutter-nomad-study-v2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485004072009:android:001af6a02ff1c2d8bb5b98",
+        "android_client_info": {
+          "package_name": "com.example.flutter_nomad_study_v2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzVJEYS4oc4gGCSZvsXKf4FuNZ1hCHynw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
