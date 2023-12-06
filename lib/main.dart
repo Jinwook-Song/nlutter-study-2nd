@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_nomad_study_v2/assignment/thread/main_navigation.dart';
+import 'package:flutter_nomad_study_v2/assignment/thread/thread_home.dart';
 import 'package:flutter_nomad_study_v2/assignment/twitter/twitter_home_screen.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -47,8 +49,12 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           surfaceTintColor: Colors.white,
         ),
+        bottomAppBarTheme: const BottomAppBarTheme(
+          color: Colors.white,
+          surfaceTintColor: Colors.white,
+        ),
       ),
-      home: const TwitterHomeScreen(),
+      home: const MainNavigation(tab: 'home'),
     );
   }
 }
