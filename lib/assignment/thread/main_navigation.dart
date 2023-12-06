@@ -70,6 +70,7 @@ class _MainNavigationState extends State<MainNavigation> {
           children: [
             Expanded(
               child: GestureDetector(
+                behavior: HitTestBehavior.translucent,
                 onTap: () => _onBottomNavigationTap(0),
                 child: _currentIndex == 0
                     ? const Icon(CupertinoIcons.house_alt_fill)
@@ -78,6 +79,7 @@ class _MainNavigationState extends State<MainNavigation> {
             ),
             Expanded(
               child: GestureDetector(
+                behavior: HitTestBehavior.translucent,
                 onTap: () => _onBottomNavigationTap(1),
                 child: _currentIndex == 1
                     ? const Icon(CupertinoIcons.search_circle_fill)
@@ -86,6 +88,7 @@ class _MainNavigationState extends State<MainNavigation> {
             ),
             Expanded(
               child: GestureDetector(
+                behavior: HitTestBehavior.translucent,
                 onTap: () => _onBottomNavigationTap(2),
                 child: _currentIndex == 2
                     ? const Icon(
@@ -96,6 +99,7 @@ class _MainNavigationState extends State<MainNavigation> {
             ),
             Expanded(
               child: GestureDetector(
+                behavior: HitTestBehavior.translucent,
                 onTap: () => _onBottomNavigationTap(3),
                 child: _currentIndex == 3
                     ? const Icon(CupertinoIcons.heart_circle_fill)
@@ -104,6 +108,7 @@ class _MainNavigationState extends State<MainNavigation> {
             ),
             Expanded(
               child: GestureDetector(
+                behavior: HitTestBehavior.translucent,
                 onTap: () => _onBottomNavigationTap(4),
                 child: _currentIndex == 4
                     ? const Icon(CupertinoIcons.person_circle_fill)

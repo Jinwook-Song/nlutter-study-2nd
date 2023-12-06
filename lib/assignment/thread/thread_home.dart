@@ -1,9 +1,39 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_nomad_study_v2/assignment/thread/widgets/tread_report_sheet.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 
-class ThreadHomeScreen extends StatelessWidget {
+class ThreadHomeScreen extends StatefulWidget {
   const ThreadHomeScreen({super.key});
+
+  @override
+  State<ThreadHomeScreen> createState() => _ThreadHomeScreenState();
+}
+
+class _ThreadHomeScreenState extends State<ThreadHomeScreen> {
+  Future<void> _onInfoTap() async {
+    await showModalBottomSheet(
+      isScrollControlled: true,
+      context: context,
+      builder: (context) {
+        bool showReport = false;
+
+        return StatefulBuilder(
+          builder: (context, setState) {
+            void onReportTap() {
+              showReport = true;
+              setState(() {});
+            }
+
+            return ThreadReportSheet(
+              showReport: showReport,
+              onReportTap: onReportTap,
+            );
+          },
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,10 +89,13 @@ class ThreadHomeScreen extends StatelessWidget {
                                 ),
                               ),
                               Gaps.h8,
-                              const Text(
-                                '•••',
-                                style: TextStyle(
-                                  fontSize: 12,
+                              GestureDetector(
+                                onTap: _onInfoTap,
+                                child: const Text(
+                                  '•••',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                  ),
                                 ),
                               ),
                             ],
