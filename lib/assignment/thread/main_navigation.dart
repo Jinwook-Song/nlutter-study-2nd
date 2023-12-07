@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_nomad_study_v2/assignment/thread/thread_home.dart';
+import 'package:flutter_nomad_study_v2/assignment/thread/thread_write.dart';
 
 class MainNavigation extends StatefulWidget {
   final String tab;
@@ -21,7 +22,29 @@ class _MainNavigationState extends State<MainNavigation> {
   ];
   late int _currentIndex = _tabs.indexOf(widget.tab);
 
-  void _onBottomNavigationTap(int tab) {
+  Future<void> _onBottomNavigationTap(int tab) async {
+    if (tab == 2) {
+      await showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (context) {
+          return FractionallySizedBox(
+            heightFactor: 0.9,
+            child: Container(
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.white,
+              ),
+              child: const ThreadWriteScreen(),
+            ),
+          );
+        },
+      );
+
+      return;
+    }
+
     setState(() {
       _currentIndex = tab;
     });
@@ -44,9 +67,7 @@ class _MainNavigationState extends State<MainNavigation> {
           ),
           Offstage(
             offstage: _currentIndex != 2,
-            child: const Center(
-              child: Text('write'),
-            ),
+            child: const ThreadWriteScreen(),
           ),
           Offstage(
             offstage: _currentIndex != 3,
