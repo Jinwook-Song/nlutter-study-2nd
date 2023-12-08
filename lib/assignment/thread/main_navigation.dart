@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_nomad_study_v2/assignment/thread/thread_home.dart';
-import 'package:flutter_nomad_study_v2/assignment/thread/thread_write.dart';
+import 'package:flutter_nomad_study_v2/assignment/thread/thread_home_screen.dart';
+import 'package:flutter_nomad_study_v2/assignment/thread/thread_search_screen.dart';
+import 'package:flutter_nomad_study_v2/assignment/thread/thread_write_screen.dart';
 
 class MainNavigation extends StatefulWidget {
   final String tab;
@@ -61,9 +62,7 @@ class _MainNavigationState extends State<MainNavigation> {
           ),
           Offstage(
             offstage: _currentIndex != 1,
-            child: const Center(
-              child: Text('search'),
-            ),
+            child: const ThreadSearchScreen(),
           ),
           Offstage(
             offstage: _currentIndex != 2,
