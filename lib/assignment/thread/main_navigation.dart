@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_nomad_study_v2/assignment/thread/thread_home_screen.dart';
+import 'package:flutter_nomad_study_v2/assignment/thread/thread_notifications_screen.dart';
 import 'package:flutter_nomad_study_v2/assignment/thread/thread_search_screen.dart';
 import 'package:flutter_nomad_study_v2/assignment/thread/thread_write_screen.dart';
 
@@ -70,9 +71,7 @@ class _MainNavigationState extends State<MainNavigation> {
           ),
           Offstage(
             offstage: _currentIndex != 3,
-            child: const Center(
-              child: Text('notifications'),
-            ),
+            child: const ThreadNotificationsScreen(),
           ),
           Offstage(
             offstage: _currentIndex != 4,
@@ -112,9 +111,9 @@ class _MainNavigationState extends State<MainNavigation> {
                 onTap: () => _onBottomNavigationTap(2),
                 child: _currentIndex == 2
                     ? const Icon(
-                        CupertinoIcons.pencil_circle_fill,
+                        CupertinoIcons.pencil_outline,
                       )
-                    : const Icon(CupertinoIcons.pencil_circle),
+                    : const Icon(CupertinoIcons.pencil_outline),
               ),
             ),
             Expanded(
