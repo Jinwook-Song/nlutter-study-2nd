@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_nomad_study_v2/assignment/thread/thread_settings_screen.dart';
 import 'package:flutter_nomad_study_v2/contants/sizes.dart';
 
 class ThreadProfileScreen extends StatefulWidget {
@@ -10,6 +11,14 @@ class ThreadProfileScreen extends StatefulWidget {
 }
 
 class _ThreadProfileScreenState extends State<ThreadProfileScreen> {
+  void _onSettingsTap() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const ThreadSettingsScreen(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -29,7 +38,7 @@ class _ThreadProfileScreenState extends State<ThreadProfileScreen> {
                     icon: const Icon(CupertinoIcons.photo_camera_solid),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: _onSettingsTap,
                     icon: const Icon(CupertinoIcons.list_dash),
                   ),
                 ],
@@ -85,29 +94,26 @@ class _ThreadProfileScreenState extends State<ThreadProfileScreen> {
                       ),
                       Gaps.v16,
                       const Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          SizedBox(
-                            width: 50,
-                            height: 30,
-                            child: Stack(
-                              clipBehavior: Clip.none,
-                              children: [
-                                Positioned(
-                                  child: CircleAvatar(
-                                    radius: 15,
-                                  ),
+                          Stack(
+                            clipBehavior: Clip.none,
+                            children: [
+                              Positioned(
+                                child: CircleAvatar(
+                                  radius: 15,
                                 ),
-                                Positioned(
-                                  left: 20,
-                                  child: CircleAvatar(
-                                    radius: 15,
-                                    backgroundColor: Colors.blue,
-                                  ),
+                              ),
+                              Positioned(
+                                left: 20,
+                                child: CircleAvatar(
+                                  radius: 15,
+                                  backgroundColor: Colors.blue,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                          Gaps.h16,
+                          Gaps.h32,
                           Text('2 followers'),
                         ],
                       ),
